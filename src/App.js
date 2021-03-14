@@ -41,7 +41,7 @@ function App() {
       username: '2daysago',
       email: '2daysago@example.com',
       active : false
-
+    }
   ])
 
   const nextId = useRef(4)
@@ -50,7 +50,7 @@ function App() {
       id : nextId.current,
       username,
       email 
-
+    }
     setUsers(users => users.concat(user))
 
     setInputs({
@@ -69,6 +69,7 @@ function App() {
       users.map(user =>
         user.id === id ? {...user, active : !user.active} : user
       )
+    )
   }, [])
 
   const count = useMemo(() => countActiveUsers(users), [users])
@@ -87,4 +88,4 @@ function App() {
   )
 }
 
-export default React.memo(App)
+export default App
